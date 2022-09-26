@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../constants.dart';
 import '../../../widgets/global_default_button.dart';
 import '../../../widgets/global_form_error.dart';
+import '../../complete_profile/complete_profile_screen.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({Key? key}) : super(key: key);
@@ -53,7 +54,8 @@ class _SignUpFormState extends State<SignUpForm> {
              GlobalDefaultButton(text: 'Continue',
               press: (){
                 if (_formKey.currentState!.validate()) {
-                  
+                   Navigator.pushNamed(context,
+               CompleteProfileScreen.routeName);
                 }
               })
           ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'presentation/screens/themes/app_colors.dart';
 //import 'screens/themes/app_colors.dart';
 
 const primaryColor=Color(0xff223263);
@@ -9,12 +11,12 @@ const greenColor=Color(0xff53D1B6);
 const purpleColor=Color(0xff5C61F4);
 const warningColor=Color(0xffFFC833);
 
-// final headingStyle= TextStyle(
-//         fontSize: 24,
-//         color: AppColors.textColor,
-//         fontWeight: FontWeight.w700,
-//         letterSpacing: 0.15,
-// );
+final headingStyle= TextStyle(
+        fontSize: 24,
+        color: AppColors.textColor,
+        fontWeight: FontWeight.w700,
+        letterSpacing: 0.15,
+);
 
 //Form Error
 final RegExp emailvalidatorRegExp=
@@ -26,3 +28,5 @@ const String kInvalinNameError="Please Enter Valid Name";
 const String kPassNullError="Please Enter your Password";
 const String kShortPassError="Password is too short";
 const String kMatchPassError="Password don't match";
+const String kPhoneNumberNullError="Please Enter your phone number";
+const String kAddressNullError="Please Enter your address";
