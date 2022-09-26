@@ -34,7 +34,7 @@ InputDecorationTheme inputDecorationTheme() {
 TextTheme textThema() {
   return const TextTheme(
     bodyText1: TextStyle(color: primaryColor),
-    bodyText2: TextStyle(color: primaryLightColor),
+    bodyText2: TextStyle(color: primaryColor),
     headline1: TextStyle(color: primaryColor, fontSize: 16),
   );
 }
@@ -44,7 +44,7 @@ AppBarTheme appBarThema() {
     color: Colors.white,
     elevation: 0,
     iconTheme: IconThemeData(
-      color: Colors.blueGrey,
+      color: Colors.grey,
     ),
   );
 }

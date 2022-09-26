@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:suzer_ecom_appp/presentation/screens/forgot_password/forgot_password_screen.dart';
-
+import '../screens/sign_up/sign_up_screen.dart';
 import '../screens/styles/app_text_styles.dart';
 
 class NoAccountText extends StatelessWidget {
@@ -15,7 +14,7 @@ class NoAccountText extends StatelessWidget {
         GestureDetector(
             onTap: () {
               Navigator.pushNamed(context,
-               ForgotPasswordScreen.routeName);
+               SignUpScreen.routeName);
             },
             child: Text(
               ' Register',

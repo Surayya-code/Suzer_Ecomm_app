@@ -10,6 +10,13 @@ void main() {
 class MyApp extends StatelessWidget {
 const MyApp({Key? key}) : super(key: key);
 
+// Future delay() async{
+// await new Future.delayed(new Duration(milliseconds: 1500), ()
+// {
+//    Navigator.of(context).pushNamed("/home");
+
+// }
+//   }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,6 +25,7 @@ const MyApp({Key? key}) : super(key: key);
       theme: theme(),
     initialRoute: SignInScreen.routeName,
     routes: routes,
+    
     );
   }
 }

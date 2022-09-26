@@ -20,6 +20,22 @@ class _SignFormState extends State<SignForm> {
   String? email;
   String? password;
 
+  void addError({String? error}) {
+    if (!errors.contains(error)) {
+      setState(() {
+        errors.add(error!);
+      });
+    }
+  }
+
+  void removeError({String? error}) {
+    if (!errors.contains(error)) {
+      setState(() {
+        errors.remove(error!);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -69,11 +85,13 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.add(kEmailNullError);
           });
+          return "";
         } else if (!emailvalidatorRegExp.hasMatch(value) &&
             !errors.contains(kInvalinEmailError)) {
           setState(() {
             errors.add(kInvalinEmailError);
           });
+          return "";
         }
         return null;
       },
@@ -106,10 +124,12 @@ class _SignFormState extends State<SignForm> {
           setState(() {
             errors.add(kPassNullError);
           });
+          return "";
         } else if (value.length < 8 && !errors.contains(kShortPassError)) {
           setState(() {
             errors.add(kShortPassError);
           });
+          return "";
         }
         return null;
       },

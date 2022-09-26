@@ -19,8 +19,10 @@ const warningColor=Color(0xffFFC833);
 //Form Error
 final RegExp emailvalidatorRegExp=
       RegExp(r"^[a-zA-Z0-9,]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+const String kNameNullError="Please Enter your Name";
 const String kEmailNullError="Please Enter your Email";
 const String kInvalinEmailError="Please Enter Valid Email";
+const String kInvalinNameError="Please Enter Valid Name";
 const String kPassNullError="Please Enter your Password";
 const String kShortPassError="Password is too short";
 const String kMatchPassError="Password don't match";
