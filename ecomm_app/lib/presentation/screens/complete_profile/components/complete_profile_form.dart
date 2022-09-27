@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suzer_ecom_appp/presentation/screens/otp/otp_screen.dart';
 
 import '../../../../constants.dart';
 import '../../../widgets/global_default_button.dart';
@@ -63,7 +64,9 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
               GlobalDefaultButton(
                   text: 'Continue',
                   press: () {
-                    if (_formKey.currentState!.validate()) {}
+                    if (_formKey.currentState!.validate()) {
+                      Navigator.pushNamed(context, OtpScreen.routeName);
+                    }
                   })
             ],
           ),
