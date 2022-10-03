@@ -12,7 +12,7 @@ class GlobalFormInput extends StatelessWidget {
   final String? Function(String?) validator;
   final bool isMail;
   final String labelText;
-  final String hintText;
+  final String? hintText;
 
   GlobalFormInput({
     Key? key,
@@ -24,7 +24,7 @@ class GlobalFormInput extends StatelessWidget {
     required this.validator,
     required this.isMail,
     required this.labelText,
-    required this.hintText,
+     this.hintText,
   }) : super(key: key);
 
   @override

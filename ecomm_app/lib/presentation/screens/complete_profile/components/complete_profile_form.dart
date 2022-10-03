@@ -128,9 +128,9 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
     return TextFormField(
       onSaved: (newValue) => lastname = newValue,
       decoration: const InputDecoration(
-        hintText: 'Last name',
+       // hintText: 'Last name',
         labelText: 'Enter your last name',
-        floatingLabelBehavior: FloatingLabelBehavior.always,
+       // floatingLabelBehavior: FloatingLabelBehavior.always,
         prefixIcon: Icon(Icons.person),
       ),
     );

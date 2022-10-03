@@ -55,8 +55,8 @@ class Body extends StatelessWidget {
         TweenAnimationBuilder(
             tween: Tween(begin: 30.0, end: 0),
             duration: const Duration(seconds: 30),
-            builder: (context, value, child) => Text(
-                  "00: $value!",
+            builder: (context,num value, child) => Text(
+                  " 00: ${value.toDouble().toStringAsFixed(0)}",
                   style: const TextStyle(color: errorColor),
                 ),
             onEnd: () {}),

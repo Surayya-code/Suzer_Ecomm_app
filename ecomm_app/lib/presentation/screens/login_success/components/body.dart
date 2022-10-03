@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:suzer_ecom_appp/constants.dart';
 import 'package:suzer_ecom_appp/presentation/widgets/global_default_button.dart';
 
+import '../../home/home_screen.dart';
+
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -23,7 +25,10 @@ children: [
    Padding(
      padding: const EdgeInsets.only(left: 16,right: 16,top: 16),
      child: GlobalDefaultButton(text: 'Back to home',
-     press: (){},),
+     press: (){
+       Navigator.pushNamed(context,
+               HomeScreen.routeName);
+     },),
    )
 ],
     );

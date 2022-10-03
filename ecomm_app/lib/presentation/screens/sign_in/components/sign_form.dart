@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suzer_ecom_appp/presentation/screens/login_success/login_success_screen.dart';
 import '../../../../constants.dart';
 import '../../../widgets/global_default_button.dart';
 import '../../../widgets/global_form_error.dart';
@@ -55,6 +56,8 @@ class _SignFormState extends State<SignForm> {
               press: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
+                   Navigator.pushNamed(context,
+                   LoginSuccessScreen.routeName);
                 }
               },
             ),
@@ -96,9 +99,9 @@ class _SignFormState extends State<SignForm> {
         return null;
       },
       decoration: const InputDecoration(
-        hintText: 'Your Email',
+        //hintText: 'Your Email',
         labelText: 'Email',
-        floatingLabelBehavior: FloatingLabelBehavior.always,
+        //floatingLabelBehavior: FloatingLabelBehavior.always,
         prefixIcon: Icon(Icons.mail),
       ),
     );
