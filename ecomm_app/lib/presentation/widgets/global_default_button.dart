@@ -14,7 +14,7 @@ class GlobalDefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: AppColors.primaryBlue,
+        backgroundColor: AppColors.primaryBlue,
         minimumSize: Size(MediaQuery.of(context).size.width, 48),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),

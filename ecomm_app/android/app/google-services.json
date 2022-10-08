@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "837622148291",
+    "project_id": "suzerecommapp",
+    "storage_bucket": "suzerecommapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837622148291:android:4a1a6d5fafe8623b05c676",
+        "android_client_info": {
+          "package_name": "com.example.ecomm_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837622148291-gc0ei1q5t4i7i2l7rgpruiv1u29s056o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJChTVGlsUk89u6-aUk39WRvR2449ZqAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837622148291-gc0ei1q5t4i7i2l7rgpruiv1u29s056o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

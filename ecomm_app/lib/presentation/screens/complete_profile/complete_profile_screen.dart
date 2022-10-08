@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'components/body.dart';
+import '../../../constants.dart';
+import 'components/complete_profile_form.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
   static String routeName="/complete_profile";
@@ -11,7 +12,24 @@ class CompleteProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Sign up'),
       ),
-      body: const Body(),
+      body: SizedBox(
+      width: double.infinity,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+              'Complete Profile',
+              style: headingStyle,
+            ),
+            const Text(
+              "Complete your details or continue \nwith social media",
+              textAlign: TextAlign.center,
+            ),
+            const CompleteProfileForm(),
+          ],
+        ),
+      ),
+    ),
     );
   }
 }

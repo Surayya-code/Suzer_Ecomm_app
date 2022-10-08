@@ -6,11 +6,10 @@ class GlobalFormInput extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController controller;
   final IconData? suffixIcon;
-  final IconData prefixIcon;
+  final IconData? prefixIcon;
   final FocusNode focus;
   final void Function(String) onChanged;
   final String? Function(String?) validator;
-  final bool isMail;
   final String labelText;
   final String? hintText;
 
@@ -18,13 +17,12 @@ class GlobalFormInput extends StatelessWidget {
     Key? key,
     required this.controller,
     this.suffixIcon,
-    required this.prefixIcon,
+    this.prefixIcon,
     required this.focus,
     required this.onChanged,
     required this.validator,
-    required this.isMail,
     required this.labelText,
-     this.hintText,
+    this.hintText, 
   }) : super(key: key);
 
   @override
@@ -44,9 +42,6 @@ class GlobalFormInput extends StatelessWidget {
               labelText: labelText,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
-                borderSide: BorderSide(
-                  color: isMail ? AppColors.lightGrey : AppColors.primaryBlue,
-                ),
               ),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
@@ -62,7 +57,6 @@ class GlobalFormInput extends StatelessWidget {
               ),
             ),
           ),
-       
         ],
       ),
     );

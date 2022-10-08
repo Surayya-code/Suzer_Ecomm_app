@@ -19,13 +19,11 @@ class GlobalButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
-          side: BorderSide(
+          foregroundColor: AppColors.lightGrey, side: BorderSide(
             width: 1.0,
             color: AppColors.lightGrey,
-          ),
+          ), backgroundColor: AppColors.whiteColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-          primary: AppColors.whiteColor,
-          onPrimary: AppColors.lightGrey,
           minimumSize: const Size(double.infinity, 50),
         ),
         onPressed: () {},
