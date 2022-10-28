@@ -1,36 +1,32 @@
 import 'package:flutter/material.dart';
-import '../screens/styles/app_text_styles.dart';
-import '../screens/themes/app_colors.dart';
+import 'package:suzer_ecom_appp/global/constants/app_constants.dart';
+import '../../global/styles/app_text_styles.dart';
+import '../../global/themes/app_colors.dart';
 
 class GlobalDefaultButton extends StatelessWidget {
   final String text;
-  final Function press;
+  final Function onPress;
   const GlobalDefaultButton({
-  Key? key, 
-  required this.text, required this.press,
+    Key? key,
+    required this.text,
+    required this.onPress,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryBlue,
-        minimumSize: Size(MediaQuery.of(context).size.width, 48),
+        backgroundColor: AppColors.primaryColor,
+        minimumSize: Size(AppConstants.fullWidth(context),
+            AppConstants.fullHeight(context) * 0.06),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      //onPressed: press(),
-      onPressed:(){
-        press();
-      },
-      child: GestureDetector(
-        onTap: () {
-          // Navigator.pushNamed(context, HomeScreen.routeName);
-        },
-        child: Text(
-          text, style: AppTextStyles.loginTextStyle,
-        ),
+      onPressed: () => onPress(),
+      child: Text(
+        text,
+        style: AppTextStyles.loginTextStyle,
       ),
     );
   }

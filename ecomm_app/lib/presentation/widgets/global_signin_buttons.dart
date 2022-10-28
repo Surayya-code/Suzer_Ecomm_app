@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../screens/styles/app_text_styles.dart';
-import '../screens/themes/app_colors.dart';
+import '../../global/styles/app_text_styles.dart';
+import '../../global/themes/app_colors.dart';
 
 class GlobalButton extends StatelessWidget {
   final String image;
@@ -15,30 +15,27 @@ class GlobalButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: ElevatedButton.icon(
-        style: ElevatedButton.styleFrom(
-          foregroundColor: AppColors.lightGrey, side: BorderSide(
-            width: 1.0,
-            color: AppColors.lightGrey,
-          ), backgroundColor: AppColors.whiteColor,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-          minimumSize: const Size(double.infinity, 50),
+    return ElevatedButton.icon(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: AppColors.iconColor, side: BorderSide(
+          width: 1.0,
+          color: AppColors.iconColor,
+        ), backgroundColor: AppColors.whiteColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+        minimumSize: const Size(double.infinity, 50),
+      ),
+      onPressed: () {},
+      icon: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Image.asset(
+          image,
+          width: width,
+          height: height,
         ),
-        onPressed: () {},
-        icon: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Image.asset(
-            image,
-            width: width,
-            height: height,
-          ),
-        ),
-        label: Text(
-          text,
-          style: AppTextStyles.googleLoginTextStyle,
-        ),
+      ),
+      label: Text(
+        text,
+        style: AppTextStyles.googleLoginTextStyle,
       ),
     );
   }

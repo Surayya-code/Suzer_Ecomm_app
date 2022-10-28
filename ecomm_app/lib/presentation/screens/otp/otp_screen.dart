@@ -1,70 +1,61 @@
 import 'package:flutter/material.dart';
-import '../../../constants.dart';
-import 'components/otp_form.dart';
+
+import '../../../global/sized_box/sized_box.dart';
+import '../../../global/styles/app_paddings.dart';
+import '../../../global/themes/app_colors.dart';
+import '../../widgets/global_appbar.dart';
+import 'widgets/otp_form.dart';
 
 class OtpScreen extends StatelessWidget {
-  static String routeName="/otp_screen";
   const OtpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(
-    title: const Text('OTP Verification'),),
-    body:  SizedBox(
-      width: double.infinity,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
+      appBar: const GlobalAppBar(title: 'OTP Verification'),
+      body: Padding(
+        padding: AppPaddings.paddingAll16,
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                'OTP Verification',
-                style: headingStyle,
-              ),
-              const SizedBox(
-                height: 15,
-              ),
               const Text(
                 'We sent your code to +1 898 860 ***',
               ),
-              timer(),
-              const SizedBox(
-                height: 60,
-              ),
+              _buildTimer,
+              AppSizedBox.sizedBox60h,
               const OTPForm(),
-              const SizedBox(height: 40,),
+              AppSizedBox.sizedBox40h,
               GestureDetector(
-                onTap: (){
-                  /////
-                },
-                child: const Text('Resend OTP Code',
-                style: TextStyle(decoration: TextDecoration.underline,),),
+                onTap: () {},
+                child: const Text(
+                  'Resend OTP Code',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
               ),
             ],
           ),
         ),
       ),
-    ),
     );
   }
 }
-Row timer() {
-    return Row(
+
+//Timer homescreen
+//use pinput
+
+Widget get _buildTimer => Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text('This code will expired in'),
         TweenAnimationBuilder(
             tween: Tween(begin: 30.0, end: 0),
             duration: const Duration(seconds: 30),
-            builder: (context,num value, child) => Text(
-                  " 00: ${value.toDouble().toStringAsFixed(0)}",
-                  style: const TextStyle(color: errorColor),
+            builder: (context, num value, child) => Text(
+                  " 00:${value.toDouble().toStringAsFixed(0)}",
+                  style: const TextStyle(color: AppColors.errorColor),
                 ),
             onEnd: () {}),
       ],
     );
-  }

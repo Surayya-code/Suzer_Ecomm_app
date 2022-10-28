@@ -1,6 +1,6 @@
 {
-    "name": "ecomm_app",
-    "short_name": "ecomm_app",
+    "name": "ecommerce_app_sh",
+    "short_name": "ecommerce_app_sh",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

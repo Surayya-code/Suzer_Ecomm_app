@@ -1,8 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
-import '../../../../constants.dart';
+import '../../../../global/themes/app_colors.dart';
 
 class CountDownPage extends StatefulWidget {
   const CountDownPage({Key? key}) : super(key: key);
@@ -23,6 +22,12 @@ class _CountDownPageState extends State<CountDownPage> {
     super.initState();
     startTimer();
     reset();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    timer!.cancel();
   }
 
   void reset() {
@@ -52,6 +57,7 @@ class _CountDownPageState extends State<CountDownPage> {
 
   @override
   Widget build(BuildContext context) {
+    print('Timer works');
     return Stack(
       children: [
         Positioned(
@@ -103,7 +109,7 @@ class _CountDownPageState extends State<CountDownPage> {
           time,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            color: primaryColor,
+            color: AppColors.primaryColor,
             fontSize: 24,
           ),
         ),
