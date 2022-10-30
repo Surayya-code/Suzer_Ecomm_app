@@ -57,7 +57,7 @@ class _CountDownPageState extends State<CountDownPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('Timer works');
+   // print('Timer works');
     return Stack(
       children: [
         Positioned(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'icon_btn_counter.dart';
 import 'search_field.dart';
 
 class HomeHeader extends StatelessWidget {
@@ -9,22 +8,14 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const SearchField(),
-          IconBtnCounter(
-            svgSrc: "assets/images/favorite.png",
-            press: () {},
-          ),
-          IconBtnCounter(
-              svgSrc: "assets/images/notificationIcon.png",
-              press: () {},
-              numOfItems: 13),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+         const SearchField(),
+          InkWell(onTap:(){},
+          child: const Icon(Icons.favorite_outline)),
+          InkWell(onTap:(){},child: const Icon(Icons.notifications_outlined)),
+      ],
     );
   }
 }

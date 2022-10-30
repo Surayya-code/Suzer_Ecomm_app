@@ -55,6 +55,7 @@ class AddressPageScreen extends StatelessWidget {
                     AppSizedBox.sizedBox10h,
                     Row(children: [
                       Container(
+                        // ignore: sort_child_properties_last
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: InkWell(

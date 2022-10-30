@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import '../../../../../../../../../global/sized_box/sized_box.dart';
 import '../../../../../../../../../global/themes/app_colors.dart';
 import '../../../../../../../../widgets/global_default_button.dart';

@@ -7,7 +7,7 @@ import '../../widgets/flash_sale.dart';
 import '../../widgets/home_header.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,10 @@ class HomePage extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        const HomeHeader(),
+         const Padding(
+           padding:  EdgeInsets.all(16.0),
+           child:  HomeHeader(),
+         ),
         const SizedBox(
           height: 10,
         ),

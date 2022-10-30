@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:suzer_ecom_appp/global/sized_box/sized_box.dart';
 
 import '../../../../../../../../../global/themes/app_colors.dart';
