@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../../../../../global/sized_box/sized_box.dart';
 import '../../../../../../../../../global/themes/app_colors.dart';
 import '../../../../../../../../widgets/global_default_button.dart';
@@ -10,6 +11,7 @@ class ChangePasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         title: Text(
           "Change Password",
           style: TextStyle(color: AppColors.titleTextColor, fontSize: 24),

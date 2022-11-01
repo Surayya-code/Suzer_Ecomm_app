@@ -11,5 +11,6 @@ class AppSizedBox {
   static SizedBox get sizedBox380 => const SizedBox(height: 380);
   static SizedBox get sizedBox16w => const SizedBox(width: 16);
   static SizedBox get sizedBox5w => const SizedBox(width: 5);
+  static SizedBox get sizedBox5h => const SizedBox(height: 5);
   static SizedBox get sizedBox10w => const SizedBox(width: 10);
 }
