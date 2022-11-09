@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-
 import '../../../../../../../global/themes/app_colors.dart';
-import '../account_screen.dart';
+import '../notification_screen.dart';
 
-class AccountItemWidget extends StatelessWidget {
-  final AccountItemModel accountItem;
+class NotificationItemWidget extends StatelessWidget {
+  final NotificationItemModel notificationItem;
 
-  const AccountItemWidget({
+  const NotificationItemWidget({
     super.key,
-    required this.accountItem,
+    required this.notificationItem,
   });
 
   @override
@@ -18,7 +17,7 @@ class AccountItemWidget extends StatelessWidget {
       child: Row(
         children: [
           Icon(
-            accountItem.icon,
+            notificationItem.icon,
             color: AppColors.primaryColor,
             size: 25,
           ),
@@ -26,7 +25,7 @@ class AccountItemWidget extends StatelessWidget {
             width: 20,
           ),
           Text(
-            accountItem.title,
+            notificationItem.title,
             style:  TextStyle(
                 fontSize: 18,
                 color: AppColors.titleTextColor,
@@ -35,9 +34,9 @@ class AccountItemWidget extends StatelessWidget {
           const Spacer(),
           GestureDetector(
               onTap: (){},
-              child:  Icon(
-                Icons.chevron_right,
-                color:AppColors.iconColor,
+              child: const Icon(
+                Icons.circle,
+                color:AppColors.errorColor,
               )),
         ],
       ),

@@ -1,8 +1,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:suzer_ecom_appp/data/models/product_card_model.dart';
 import 'package:suzer_ecom_appp/global/constants/api_constants.dart';
+
+import '../models/product_card_model.dart';
 
 class ProductService {
   static Future<List<ProductCardModel>> fetchProducts() async {

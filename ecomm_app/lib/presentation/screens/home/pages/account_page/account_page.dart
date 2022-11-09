@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'account.dart';
+import 'account_screen.dart';
 
 
 class AccountPage extends StatelessWidget {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import 'package:suzer_ecom_appp/provider/app_provider.dart';
 
 import 'global/themes/app_themes.dart';
 import 'presentation/screens/sign_in/signin_screen.dart';
@@ -15,11 +17,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Suzer E-comm",
-      theme: theme(),
-      home: const SignInScreen(),
+    return ChangeNotifierProvider(
+      create: (BuildContext context) =>AppProvider(),
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: "Suzer E-comm",
+        theme: theme(),
+        home: const SignInScreen(),
+      ),
     );
   }
 }
