@@ -3,9 +3,10 @@ import '../../../../global/themes/app_colors.dart';
 
 
 class SearchField extends StatelessWidget {
+ final void Function(String) onChanged;
 
    const SearchField({
-    Key? key,
+    Key? key, required this.onChanged,
     
   }) : super(key: key);
  
@@ -20,7 +21,8 @@ class SearchField extends StatelessWidget {
       ),
       child: TextField(
         scrollPadding: const EdgeInsets.all(10),
-        onChanged: (value) {},
+        onChanged: onChanged,
+        style: TextStyle(color: AppColors.titleTextColor,fontWeight: FontWeight.w400),
         decoration:  InputDecoration(
           floatingLabelAlignment: FloatingLabelAlignment.center,
           focusColor: AppColors.primaryColor,

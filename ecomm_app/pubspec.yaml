@@ -49,6 +49,7 @@ dependencies:
   pinput: ^2.2.16
   syncfusion_flutter_datepicker: ^20.3.50
   provider: ^6.0.4
+  flutter_bloc: ^8.1.1
 
 dev_dependencies:
   flutter_test:

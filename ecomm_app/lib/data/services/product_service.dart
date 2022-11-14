@@ -6,7 +6,7 @@ import 'package:suzer_ecom_appp/global/constants/api_constants.dart';
 import '../models/product_card_model.dart';
 
 class ProductService {
-  static Future<List<ProductCardModel>> fetchProducts() async {
+   Future<List<dynamic>> fetchProducts() async {
     Uri productUrl = Uri.parse(ApiConstants.getProductUrl);
 
     http.Response response = await http.get(productUrl);
