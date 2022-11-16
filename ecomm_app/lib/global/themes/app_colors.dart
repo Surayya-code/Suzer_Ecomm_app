@@ -19,4 +19,7 @@ class AppColors {
   static Color get inActiveColor => neutralLightColor;
   static const Color primaryYellowColor = Color(0xffFFC833);
   static Color get rateActiveColor => primaryYellowColor;
+  static const Color primaryGreenColor = Color(0xff53D1B6);
+  static Color get activeColor => primaryGreenColor;
+  
 }

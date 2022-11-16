@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 //import 'package:get/get.dart';
 
 import '../../../../../../data/models/product_card_model.dart';
 import '../../../../../../global/sized_box/sized_box.dart';
 import '../../../../../../global/themes/app_colors.dart';
+import '../pages/product_detail/product_detail_screen.dart';
 
 class ProductItemWidget extends StatelessWidget {
   final ProductCardModel product;
@@ -16,7 +18,7 @@ class ProductItemWidget extends StatelessWidget {
       width: 200,
       child: InkWell(
         onTap: () {
-          //Get.to(()=>ProductItemScreen(product:product));
+         Get.to(()=> ProductDetailScreen(product: product,));
         },
         child: Card(
           shape: BeveledRectangleBorder(
@@ -111,3 +113,4 @@ class ProductItemWidget extends StatelessWidget {
     );
   }
 }
+

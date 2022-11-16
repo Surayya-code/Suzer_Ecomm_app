@@ -16,11 +16,8 @@ class HomeHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        SearchField(onChanged: ((p0) => {})),
-        //  InkWell(
-        //        onTap:(){
-        //       },
-        //       child: const Icon(Icons.favorite_outline,)),
+        SearchField(
+          onChanged: ((value) => {}),),
         Consumer<AppProvider>(
           builder: (BuildContext context, appProvider, child) {
             return InkWell(

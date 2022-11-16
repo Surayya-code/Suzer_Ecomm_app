@@ -16,6 +16,13 @@ class AppTextStyles {
         letterSpacing: 0.15,
         overflow: TextOverflow.ellipsis,
       );
+static TextStyle get headingCardTitleStyle =>  TextStyle(
+        fontSize: 20,
+        color: AppColors.titleTextColor,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.15,
+       // overflow: TextOverflow.ellipsis,
+      );
   static TextStyle get signinTitleStyle => const TextStyle(
         fontSize: 16,
         color: AppColors.primaryColor,
@@ -88,4 +95,15 @@ class AppTextStyles {
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primaryColor);
+
+      static TextStyle get specificationTitleStyle =>  TextStyle(
+        fontSize: 18,
+        color: AppColors.titleTextColor,
+        fontStyle: FontStyle.italic
+      );
+       static TextStyle get specificationRightTextStyle => const TextStyle(
+        fontSize: 16,
+        color: AppColors.textColor,
+        fontStyle: FontStyle.italic
+      );
 }
