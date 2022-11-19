@@ -29,6 +29,7 @@ class _SearchPageState extends State<SearchPage> {
     ),
     ProductCardModel(
       title: "White Gold Plated Princess",
+      
       category: "jewelery",
       price: 9.99,
       image: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",

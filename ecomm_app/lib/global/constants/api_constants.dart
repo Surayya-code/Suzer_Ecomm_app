@@ -6,6 +6,7 @@ class ApiConstants {
   // http://localhost:3000/products
 
   static String getProductUrl='$baseUrl/products';
+  static String getCartUrl='$baseUrl/carts/1';
   //static String getProductUrl2='$baseUrl2/products';
 
 }

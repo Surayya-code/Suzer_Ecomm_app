@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:suzer_ecom_appp/global/sized_box/sized_box.dart';
 import 'package:suzer_ecom_appp/presentation/widgets/global_default_button.dart';
-
 import '../../../../../global/themes/app_colors.dart';
+import 'widgets/card_element_widget.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -24,65 +24,48 @@ class _CartPageState extends State<CartPage> {
       ),
       body: Stack(
         children: [
-          //Container(),
           Positioned.fill(
-            child: ListView.builder(
-              itemCount: 3,
-              shrinkWrap: true,
-              padding: const EdgeInsets.all(16),
-              itemBuilder: (context, index) => Container(
-                margin: const EdgeInsets.all(4),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      color: AppColors.primaryColor,
-                      child: Image.asset("assets/images/product_5.png"),
-                    ),
-                    AppSizedBox.sizedBox10w,
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Nike Air Zoom Pegasus\n36 Miami",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                              color: AppColors.titleTextColor),
-                        ),
-                        AppSizedBox.sizedBox10h,
-                        const Text(
-                          "\$299.43",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 14),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    Row(
-                      children: [
-                        Container(
-                            color: AppColors.iconColor,
-                            child: const Icon(Icons.remove)),
-                        Container(
-                          padding: const EdgeInsets.all(8),
-                          child: Text(
-                            "7",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.titleTextColor),
-                          ),
-                        ),
-                        Container(
-                            color: AppColors.iconColor,
-                            child: const Icon(Icons.add)),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            child: ListView.separated(
+                  itemCount: 1,
+                  shrinkWrap: true,
+                  padding: const EdgeInsets.all(16),
+                  separatorBuilder: (BuildContext context, int index) =>
+                      AppSizedBox.sizedBox16w,
+                  itemBuilder: (context, index) {
+                    return  const CardElementWidget(
+                    );
+                    }
+                    )
+          //   child: BlocBuilder<CartBloc, CartState>(
+          //     builder: (context, state) {
+          //       if(state is CartFetchLoading){
+          //         return const GloabalLoading();
+          //       }else if(state is CartFetchFailure){
+          //         return Center(
+          //           child: Text(state.failureModel.failureMessage,
+          //           style: const TextStyle(color: AppColors.errorColor),),
+          //         );
+          //       }else if(state is CartFetchSuccess){
+          //         List<ProductCardModel> cartList = state.productList;
+          //       return ListView.separated(
+          //         itemCount: cartList.length,
+          //         shrinkWrap: true,
+          //         padding: const EdgeInsets.all(16),
+          //         separatorBuilder: (BuildContext context, int index) =>
+          //             AppSizedBox.sizedBox16w,
+          //         itemBuilder: (context, index) {
+          //           ProductCardModel product = cartList[index];
+          //           return  CardElementWidget(
+          //             product:product ,
+          //           );
+          //         },
+          //       );
+          //     }else {
+          //       print('0');
+          //       return const SizedBox();
+          //     }
+          //   }
+          //  ),
           ),
           Positioned(
               bottom: 0,

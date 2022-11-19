@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:suzer_ecom_appp/global/sized_box/sized_box.dart';
 import 'package:suzer_ecom_appp/global/themes/app_colors.dart';
-import 'package:suzer_ecom_appp/presentation/screens/home/pages/home_page/pages/product_detail/widgets/produc_tTitle_widget.dart';
+import 'package:suzer_ecom_appp/presentation/screens/home/pages/home_page/pages/product_detail/widgets/produc_title_widget.dart';
 import 'package:suzer_ecom_appp/presentation/widgets/global_default_button.dart';
 import '../../../../../../../data/models/product_card_model.dart';
 import '../../../../../../../global/styles/app_text_styles.dart';
 import '../../../cart_page/cart_page.dart';
-import 'widgets/colorWidgets.dart';
+import 'widgets/color_widgets.dart';
 import 'widgets/product_review_widget.dart';
 import 'widgets/specification_details_widget.dart';
 
