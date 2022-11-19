@@ -16,12 +16,12 @@ class AppTextStyles {
         letterSpacing: 0.15,
         overflow: TextOverflow.ellipsis,
       );
-static TextStyle get headingCardTitleStyle =>  TextStyle(
+  static TextStyle get headingCardTitleStyle => TextStyle(
         fontSize: 20,
         color: AppColors.titleTextColor,
         fontWeight: FontWeight.w600,
         letterSpacing: 0.15,
-       // overflow: TextOverflow.ellipsis,
+        // overflow: TextOverflow.ellipsis,
       );
   static TextStyle get signinTitleStyle => const TextStyle(
         fontSize: 16,
@@ -91,19 +91,32 @@ static TextStyle get headingCardTitleStyle =>  TextStyle(
         letterSpacing: 0.5,
       );
 
-      static TextStyle get registerSuccessTextStyle =>const TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: AppColors.primaryColor);
+  static TextStyle get registerSuccessTextStyle => const TextStyle(
+      fontSize: 32, fontWeight: FontWeight.bold, color: AppColors.primaryColor);
 
-      static TextStyle get specificationTitleStyle =>  TextStyle(
-        fontSize: 18,
-        color: AppColors.titleTextColor,
-        fontStyle: FontStyle.italic
-      );
-       static TextStyle get specificationRightTextStyle => const TextStyle(
-        fontSize: 16,
-        color: AppColors.textColor,
-        fontStyle: FontStyle.italic
-      );
+  static TextStyle get specificationTitleStyle => TextStyle(
+      fontSize: 18,
+      color: AppColors.titleTextColor,
+      fontStyle: FontStyle.italic);
+  static TextStyle get specificationRightTextStyle => const TextStyle(
+      fontSize: 16, color: AppColors.textColor, fontStyle: FontStyle.italic);
+
+  static const TextStyle myCardTitle = TextStyle(
+      color: AppColors.whiteColor,
+      fontWeight: FontWeight.w700,
+      fontSize: 16);
+     
+
+  static const TextStyle myCardSubTitle =
+      TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 18);
+
+  static const TextStyle bodyText = TextStyle(
+      color: AppColors.primaryCardColor,
+      fontWeight: FontWeight.w700,
+      fontSize: 20);
+
+  static const TextStyle listTtxileTe = TextStyle(
+    color: AppColors.primaryCardColor,
+    fontSize: 20,
+  );
 }

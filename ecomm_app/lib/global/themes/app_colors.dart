@@ -21,5 +21,7 @@ class AppColors {
   static Color get rateActiveColor => primaryYellowColor;
   static const Color primaryGreenColor = Color(0xff53D1B6);
   static Color get activeColor => primaryGreenColor;
+  static const Color primaryCardColor = Color(0xff00444f);
+  static const Color secondaryCardColor = Color(0xffff7b67);
   
 }

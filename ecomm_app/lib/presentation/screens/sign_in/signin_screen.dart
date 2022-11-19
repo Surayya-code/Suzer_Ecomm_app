@@ -13,7 +13,6 @@ import '../sign_up/sing_up_screen.dart';
 import 'widgets/signin_form.dart';
 
 class SignInScreen extends StatefulWidget {
-  static String routeName = "/sign_in";
 
   const SignInScreen({Key? key}) : super(key: key);
 

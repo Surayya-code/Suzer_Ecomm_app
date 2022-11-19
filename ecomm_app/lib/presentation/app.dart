@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         title: "Suzer E-comm",
         theme: theme(),
         home: const SignInScreen(),
+        
       ),
     );
   }
