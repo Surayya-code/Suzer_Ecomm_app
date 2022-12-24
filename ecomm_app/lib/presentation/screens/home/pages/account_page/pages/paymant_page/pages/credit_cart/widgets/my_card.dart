@@ -78,7 +78,7 @@ class MyCard extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
+              SizedBox(
                 width: 50,
                 height: 50,
                 child: Image.asset('assets/images/mcard.png'),

@@ -26,7 +26,7 @@ class CreditDebitCart extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-             Container(
+             SizedBox(
               height: 200,
               child: ListView.separated(
                 physics: const ClampingScrollPhysics(),

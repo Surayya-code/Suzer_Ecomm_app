@@ -50,6 +50,7 @@ dependencies:
   syncfusion_flutter_datepicker: ^20.3.50
   provider: ^6.0.4
   flutter_bloc: ^8.1.1
+  image_picker: ^0.8.6
 
 dev_dependencies:
   flutter_test:

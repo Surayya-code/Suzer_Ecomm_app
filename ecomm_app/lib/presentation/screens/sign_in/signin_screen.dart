@@ -12,15 +12,10 @@ import '../forgot_password/forgot_password_screen.dart';
 import '../sign_up/sing_up_screen.dart';
 import 'widgets/signin_form.dart';
 
-class SignInScreen extends StatefulWidget {
+class SignInScreen extends StatelessWidget {
 
   const SignInScreen({Key? key}) : super(key: key);
 
-  @override
-  State<SignInScreen> createState() => _SignInScreenState();
-}
-
-class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
