@@ -22,15 +22,14 @@ class _SignFormState extends State<SignForm> {
   late FocusNode emailFocus;
   late final FocusNode passwordFocus;
   final _formKey = GlobalKey<FormState>();
-  // FirebaseFirestore firestore=FirebaseFirestore.instance;
-  // final CollectionReference taskCollection=FirebaseFirestore.instance.collection('login');
+ 
 
   @override
   void initState() {
     super.initState();
-    emailcontroller = TextEditingController(text: "sureyya@mail.ru");
+    emailcontroller = TextEditingController();
     emailFocus = FocusNode();
-    passwordcontroller = TextEditingController(text: "12345678");
+    passwordcontroller = TextEditingController();
     passwordFocus = FocusNode();
   }
 
@@ -42,8 +41,6 @@ class _SignFormState extends State<SignForm> {
     passwordcontroller.dispose();
     passwordFocus.dispose();
   }
-
-//final AuthService _authService = AuthService();
   @override
   Widget build(BuildContext context) {
     return Form(

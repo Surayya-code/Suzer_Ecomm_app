@@ -7,6 +7,7 @@ import 'package:suzer_ecom_appp/data/repositories/impl_product_service.dart';
 import 'package:suzer_ecom_appp/provider/app_provider.dart';
 import '../bloc/products/products_bloc.dart';
 import '../global/themes/app_themes.dart';
+import '../provider/count_data.dart';
 import 'screens/sign_in/signin_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -24,6 +25,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => AppProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (context)=> CountData()),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,

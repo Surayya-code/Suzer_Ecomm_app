@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../../../data/models/product_card_model.dart';
 import '../../../../../../global/sized_box/sized_box.dart';
 import '../../../../../../global/themes/app_colors.dart';
+import '../../../../../../provider/count_data.dart';
 
-class CardElementWidget extends StatefulWidget {
+class CardElementWidget extends StatelessWidget {
   final ProductCardModel? product;
   const CardElementWidget({super.key, this.product});
 
 
   @override
-  State<CardElementWidget> createState() => _CardElementWidgetState();
-}
-
-class _CardElementWidgetState extends State<CardElementWidget> {
-   int itemCount=0;
-  @override
   Widget build(BuildContext context) {
+    //int itemCount=0;
     return  Container(
               // ProductCardModel product = productList[index];
                 margin: const EdgeInsets.all(4),
@@ -52,9 +49,13 @@ class _CardElementWidgetState extends State<CardElementWidget> {
                       children: [
                         InkWell(
                           onTap: (){
-                            setState(() {
-                              itemCount!=0 ? itemCount--: itemCount++;
-                            });
+                            if( Provider.of<CountData>(context,listen: false).count>0){
+                             Provider.of<CountData>(context,listen: false).decrCount();
+                            }
+                            
+                            // setState(() {
+                            //   itemCount!=0 ? itemCount--: itemCount++;
+                            // });
                           },
                           child: Container(
                               color: AppColors.iconColor,
@@ -62,18 +63,23 @@ class _CardElementWidgetState extends State<CardElementWidget> {
                         ),
                         Container(
                           padding: const EdgeInsets.all(8),
-                          child: Text(
-                            itemCount.toString(),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.titleTextColor),
+                          child: Consumer<CountData>(
+                            builder: (context,data,child) {
+                              return Text('${data.count}',
+                                //itemCount.toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.titleTextColor),
+                              );
+                            }
                           ),
                         ),
                         InkWell(
                           onTap:(){
-                            setState(() {
-                              itemCount++;
-                            });
+                             Provider.of<CountData>(context,listen: false).incrCount();
+                            // setState(() {
+                            //   itemCount++;
+                            // });
                           },
                           child: Container(
                               color: AppColors.iconColor,

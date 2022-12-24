@@ -25,7 +25,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   void initState() {
     super.initState();
-    emailcontroller = TextEditingController(text: "sureyya@mail.ru");
+    emailcontroller = TextEditingController(text: "test@mail.ru");
     emailFocus = FocusNode();
   }
 
