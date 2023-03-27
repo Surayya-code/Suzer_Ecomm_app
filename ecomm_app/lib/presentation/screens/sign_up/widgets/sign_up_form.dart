@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -27,6 +29,13 @@ class _SignUpFormState extends State<SignUpForm> {
   late final FocusNode passwordFocus;
   late final FocusNode confirmPasswordFocus;
   final _formKey = GlobalKey<FormState>();
+
+  final auth = FirebaseAuth.instance;
+  final  registrUsers = FirebaseFirestore.instance.collection('registration');
+  late String name;
+  late String email;
+  late String password;
+  late String confPass;
 
   @override
   void initState() {
@@ -68,7 +77,9 @@ class _SignUpFormState extends State<SignUpForm> {
               controller: nameController,
               focus: nameFocus,
               prefixIcon: Icons.person,
-              onChanged: (value) {},
+              onChanged: (value) {
+                name=value;
+              },
               validator: (value) => AppInputValidation.setNameValidation(value),
             ),
             AppSizedBox.sizedBox10h,
@@ -77,7 +88,9 @@ class _SignUpFormState extends State<SignUpForm> {
               controller: emailController,
               focus: emailFocus,
               prefixIcon: Icons.email,
-              onChanged: (value) {},
+              onChanged: (value) {
+                email = value;
+              },
               validator: (value) =>
                   AppInputValidation.setEmailValidation(value),
             ),
@@ -86,17 +99,24 @@ class _SignUpFormState extends State<SignUpForm> {
               controller: passwordController,
               focus: passwordFocus,
               prefixIcon: Icons.lock,
-              onChanged: (value) {},
+              obscureText: true,
+              onChanged: (value) {
+                password = value;
+              },
               validator: (value) =>
                   AppInputValidation.setPasswordValidation(value),
               labelText: "Password",
+              
             ),
             AppSizedBox.sizedBox10h,
             GlobalFormInput(
               controller: confirmPasswordController,
               focus: confirmPasswordFocus,
               prefixIcon: Icons.lock,
-              onChanged: (value) {},
+              obscureText: true,
+              onChanged: (value) {
+                confPass=value;
+              },
               validator: (value) =>
                   AppInputValidation.setPasswordValidation(value),
               labelText: "Confirm Password",
@@ -104,10 +124,28 @@ class _SignUpFormState extends State<SignUpForm> {
             AppSizedBox.sizedBox24h,
             GlobalDefaultButton(
                 text: 'Continue',
-                onPress: () {
+                onPress: () async{
                   if (_formKey.currentState!.validate()) {
                     if (passwordController.text ==
                         confirmPasswordController.text) {
+                        try {
+                         var userResult = await auth.createUserWithEmailAndPassword(
+                               email: email,
+                               password: password); 
+                               print(userResult.user!.email);
+
+                        registrUsers.add({
+                        'name':name,
+                        'email':auth.currentUser?.email,
+                        'password':password,
+                        'confpass':confPass,
+                      });
+                      print('send message to firebase');
+                      print(auth.currentUser?.email);
+                        } catch (e) {
+                          print(e.toString());
+                          print('Errorr!');
+                        }
                       Get.off(() => const OtpScreen());
                     } else {
                       AppSnackbar.showAppSnackbar(

@@ -10,6 +10,7 @@ class GlobalFormInput extends StatelessWidget {
   final String? Function(String?) validator;
   final String labelText;
   final String? hintText;
+  final bool obscureText;
 
   const GlobalFormInput({
     Key? key,
@@ -20,12 +21,14 @@ class GlobalFormInput extends StatelessWidget {
     required this.onChanged,
     required this.validator,
     required this.labelText,
-    this.hintText,
+    this.hintText, 
+    this.obscureText=false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText:obscureText,
       onChanged: onChanged,
       validator: validator,
       controller: controller,

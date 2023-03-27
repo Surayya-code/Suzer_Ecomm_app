@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +24,11 @@ class _SignFormState extends State<SignForm> {
   late FocusNode emailFocus;
   late final FocusNode passwordFocus;
   final _formKey = GlobalKey<FormState>();
- 
+
+  final auth = FirebaseAuth.instance;
+  final  users = FirebaseFirestore.instance.collection('signInUsers');
+  late String email;
+  late String password;
 
   @override
   void initState() {
@@ -52,7 +58,9 @@ class _SignFormState extends State<SignForm> {
             controller: emailcontroller,
             focus: emailFocus,
             prefixIcon: Icons.email,
-            onChanged: (value) {},
+            onChanged: (value) {
+              email=value;
+            },
             validator: (value) => AppInputValidation.setEmailValidation(value),
           ),
           AppSizedBox.sizedBox10h,
@@ -60,21 +68,41 @@ class _SignFormState extends State<SignForm> {
             controller: passwordcontroller,
             focus: passwordFocus,
             prefixIcon: Icons.lock,
-            onChanged: (value) {},
+            obscureText: true,
+            onChanged: (value) {
+              password=value;
+            },
             validator: (value) =>
                 AppInputValidation.setPasswordValidation(value),
             labelText: "Password",
+            
           ),
           AppSizedBox.sizedBox24h,
           GlobalDefaultButton(
             text: 'Sign in',
-            onPress: () {
+            onPress: () async {
               if (_formKey.currentState!.validate()) {
-                Get.to(() => const HomeScreen());
-                // _authService
-                //     .singIn(emailcontroller.text, passwordcontroller.text)
-                //     .then((value) =>
-                //         Navigator.pushNamed(context, HomeScreen.routeName));
+                try {
+                  var userResult=await auth
+                .signInWithEmailAndPassword(
+                  email: email,
+                  password: password);
+
+                  users.add({
+                        'password':password,
+                        'sender':auth.currentUser?.email,
+                      });
+                      print('send message to firebase');
+                      print(auth.currentUser?.email);
+
+
+                  if (userResult!=null) {
+                         Get.to(() => const HomeScreen());
+                      }
+                  print(userResult.user!.uid);
+                } catch (e) {
+                  print(e.toString());
+                }
               }
             },
           ),
